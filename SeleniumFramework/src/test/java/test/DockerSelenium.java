@@ -2,11 +2,13 @@ package test;
 
 
 import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -22,13 +24,13 @@ public class DockerSelenium {
            
             if (Browser.equals("Firefox")){
               DesiredCapabilities dcap = DesiredCapabilities.firefox();
-              //driver = new RemoteWebDriver(new URL("http://localhost:172.17.03:5555/wd/hub"),dcap);
+              WebDriver driver =  new RemoteWebDriver(new URL("http://localhost:4444/grid/console"), dcap);
             }
             else if (Browser.equals("Chrome")){
                 String exePath = "/Users/saraddhungel/Downloads/chromedriver";
                 System.setProperty("webdriver.chrome.driver", exePath);
                 DesiredCapabilities dcap = DesiredCapabilities.chrome();
-                //driver = new RemoteWebDriver(new URL("http://localhost:172.17.04:5555/wd/hub"),dcap);
+                WebDriver driver =  new RemoteWebDriver(new URL("http://localhost:4444/grid/console"), dcap);
             }     
       }
 

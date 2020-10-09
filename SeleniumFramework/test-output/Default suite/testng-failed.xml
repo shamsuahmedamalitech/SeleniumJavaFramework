@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="demo.TestNGMultiBrowserDemo">
+      <class name="test.DockerSelenium">
         <methods>
-          <include name="googleSearch"/>
-          <include name="setUpTest"/>
-          <include name="googleSearch3"/>
+          <include name="Driver"/>
+          <include name="googleSearch2"/>
           <include name="tearDownTest"/>
         </methods>
-      </class> <!-- demo.TestNGMultiBrowserDemo -->
+      </class> <!-- test.DockerSelenium -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
